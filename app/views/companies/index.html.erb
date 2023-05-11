@@ -1,9 +1,24 @@
+<%= form_with :model => @company do |form| %>
+  <p>
+    <%= form.label "name", "Company Name" %>
+    <%= form.text_field "name" %>
+  </p>
+  <p>
+    <%= form.label "city" %>
+    <%= form.text_field "city" %>
+    <%= form.label "state" %>
+    <%= form.text_field "state" %>
+  </p>
+  <%= form.submit %>
+<% end %>
+
+<!--
 <% companies = Company.all %>
 
 <h1>My CRM</h1>
  
 <ul>
-  <% for company in companies %>
+  <% for company in @companies %>
     <li>
       <a href="/companies/<%= company["id"] %>">
       <%= company["name"] %>
@@ -11,3 +26,5 @@
     </li>
   <% end %>
 </ul>
+
+<a href="/companie/new>
